@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand SC', cursive;
+}
+:root
+{
+    --size: 300px;
+}
+body
+{
+    background: #333333;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100hv;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
+}
+.container .notes
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+/*Sticky-Note style*/
+.container .notes .note
+{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: #f7e98d;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.822);
+}
+/*Tell user to double click to remove note when hovering over note*/
+.container .notes .note::before
+{
+    content: 'Double Click to Remove This Note';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.15);
+    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85em;
+    opacity: 0;
+    transition: 0.5s;
+    color: white;
+}
+.container .notes .note:hover:before
+{
+    opacity: 1;
+}
+/*Center and enlarge pencil button to create sticky-note*/
+#create
+{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: #595959;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+    cursor: pointer;
+}
+#create i
+{
+    position: absolute;
+    color: #333333;
+}
+.createBox
+{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    z-index: 1000;
+    display: none;
+}
+.createBox textarea
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--size);
+    height: var(--size);
+    padding: 20px;
+    outline: none;
+    font-size: 0.2em;
+    resize: none;
+}
+/*Get rid of annoying blue selection that appears on double-click*/
+.details h3
+{
+    user-select: none;
+    font-size: 1.45em;
+    color: black;
+    text-decoration: none;
+}
+/*note turns white over hover*/
+.details h3:hover
+{
+    color: white;
+}
+
+/*Cross through finished tasks */
+
+.noteStrike
+{
+    text-decoration: line-through;
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    Color: #e6e6e6;
+    font-size: 5em;
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
